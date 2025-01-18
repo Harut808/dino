@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h2 {
+    width: 20%; 
+    height: 10%;
+    margin-left: 80%;
+}
+
+/* Установка фона */
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: linear-gradient(to bottom, #87CEEB, #87CEFA);
+    font-family: Arial, sans-serif;
+}
+
+/* Основная сцена */
+.scene {
+    position: relative;
+    width: 50%;
+    height: 50vh;
+    margin-left: 25%;
+    margin-top: 12.5%;
+    overflow: hidden;
+    background: linear-gradient(to bottom, #87CEEB, #87CEFA);
+    border: 2px solid #333;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Облака */
+.clouds {
+    position: absolute;
+    top: 5%;
+    width: 100%;
+    height: 20%;
+    overflow: hidden;
+}
+
+.cloud {
+    position: absolute;
+    width: 25%;
+    height: 15%;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 6% 6% 0% white, 12% 3% 0% white, -6% 3% 0% white;
+    animation: moveClouds 20s linear infinite;
+}
+
+.cloud:nth-child(2) {
+    width: 25%;
+    height: 18%;
+    top: 40%;
+    left: 30%;
+    animation-duration: 25s;
+}
+
+.cloud:nth-child(3) {
+    width: 20%;
+    height: 18%;
+    top: 15%;
+    left: 60%;
+    animation-duration: 22s;
+}
+
+@keyframes moveClouds {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(100%);
+    }
+}
+
+/* Дорога с движением */
+.road {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    background-color: #444;
+    overflow: hidden;
+}
+
+.road::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10%;
+    background: linear-gradient(to right, #333 25%, #444 25%, #444 50%, #333 50%, #333 75%, #444 75%);
+    background-size: 200% 100%;
+    animation: moveRoadLines 10s linear infinite;
+}
+
+@keyframes moveRoadLines {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 100% 0;
+    }
+}
+
+/* Динозавр */
+#dino {
+    width: 5%;
+    height: 10%;
+    position: absolute;
+    background-image: url('./nkarner/dino.png');
+    background-size: cover;
+    margin-left: 10%;
+    margin-top: 24%;
+    z-index: 525; 
+}
+
+
+
+
+
